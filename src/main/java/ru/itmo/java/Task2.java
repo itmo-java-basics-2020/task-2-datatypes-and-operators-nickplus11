@@ -39,8 +39,13 @@ public class Task2 {
      */
     boolean numberInRange(Integer number, Integer leftBound, Integer rightBound, Boolean inclusively) {
         var answ = false;
-        if (number == null || leftBound == null || rightBound == null || inclusively == null) return answ;
-        if(!inclusively) { ++leftBound; --rightBound;}
+        if (number == null || leftBound == null || rightBound == null || inclusively == null) {
+            return answ;
+        }
+        if (!inclusively) {
+            ++leftBound;
+            --rightBound;
+        }
         answ = number >= leftBound && number <= rightBound;
         return answ; //your code here
     }
@@ -48,31 +53,30 @@ public class Task2 {
     /**
      * Даны 3 символа. Определите является ли хотя бы один из них цифрой 1..9
      */
-    boolean atLeastOneIsDigit(char c1, char c2, char c3)
-    {
-        return c1-'0' >= 0 && '9'-c1 >= 0  || c2-'0' >= 0 && '9'-c2 >= 0 ||
-                c3-'0' >= 0 && '9'-c3 >= 0 ; //your code here
+    boolean atLeastOneIsDigit(char c1, char c2, char c3) {
+        return c1 - '0' >= 0 && '9' - c1 >= 0 || c2 - '0' >= 0 && '9' - c2 >= 0 ||
+                c3 - '0' >= 0 && '9' - c3 >= 0; //your code here
     }
 
     /**
      * Даны два вещественных числа. Определите равны ли они
      */
     boolean areRealNumbersEqual(double a, double b) {
-        return a-b >= -1e-9 && a-b <= 1e-9; //your code here
+        return a - b >= -1e-9 && a - b <= 1e-9; //your code here
     }
 
     /**
      * Дано трехзначное число 100 <= N <= 999. Найдите сумму его чисел.
      */
     int sumOfDigits(int n) {
-        return n/100 + n/10%10 + n%10; //your code here
+        return n / 100 + n / 10 % 10 + n % 10; //your code here
     }
 
     /**
      * Дано натуральное число N <= 10000. Выведите следующее после N четное число. Например: N = 8, Result = 10
      */
     int nextEvenNumber(int n) {
-        return (n%2==0) ? n+2 : n+1; //your code here
+        return (n % 2 == 0) ? n + 2 : n + 1; //your code here
     }
 
     /**
@@ -82,15 +86,14 @@ public class Task2 {
      * своем кабинете
      */
     int schoolDesks(int num1, int num2, int num3) {
-        return ((num1%2==0) ? num1/2 : num1/2+1) + ((num2%2==0) ? num2/2 : num2/2+1) +
-                ((num3%2==0) ? num3/2 : num3/2+1); //your code here
+        return ((num1 % 2 == 0) ? num1 / 2 : num1 / 2 + 1) + ((num2 % 2 == 0) ? num2 / 2 : num2 / 2 + 1) +
+                ((num3 % 2 == 0) ? num3 / 2 : num3 / 2 + 1); //your code here
     }
 
     /**
      * Дано натуральное число N >= 10. Выведите результат применения XOR к последним 2-м цифрам числа N
      */
     int xorDigits(int N) {
-        return N%10^N/10%10; //your code here
+        return N % 10 ^ N / 10 % 10; //your code here
     }
-
 }
